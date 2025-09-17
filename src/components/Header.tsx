@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <EditableText
             initialText="Curated Gifts"
-            className="text-luxury-foreground text-2xl font-serif font-semibold"
+            className="text-luxury-foreground text-2xl font-serif font-bold"
             placeholder="Enter website title..."
           />
           <Gift className="text-luxury-foreground w-6 h-6" />

@@ -35,6 +35,9 @@ All colors MUST be HSL.
     --gold: 45 95% 65%;
     --gold-foreground: 15 25% 15%;
 
+    --burgundy: 0 60% 35%;
+    --burgundy-foreground: 0 0% 100%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 

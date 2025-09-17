@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/ui/hero-section';
 import GiftItem from '@/components/GiftItem';
+import FeaturedCard from '@/components/FeaturedCard';
 import EditableText from '@/components/EditableText';
 
 // Import generated images
@@ -13,6 +14,14 @@ import giftCandles from '@/assets/gift-candles.jpg';
 import giftCashmere from '@/assets/gift-cashmere.jpg';
 
 const Index = () => {
+  const featuredItem = {
+    image: giftCashmere,
+    title: "Editor's Choice: Pure Cashmere Throw",
+    description: "This month's featured selection represents the pinnacle of luxury and comfort. Our premium cashmere throw is hand-selected for its unparalleled softness and sophisticated style. Crafted from the finest fibers, it transforms any space into a sanctuary of elegance. Perfect for those who appreciate the finer things in life.",
+    price: "$485",
+    category: "Featured"
+  };
+
   const giftItems = [
     {
       id: 1,
@@ -70,6 +79,28 @@ const Index = () => {
       <HeroSection />
       
       <main className="max-w-7xl mx-auto px-6 py-16">
+        {/* Featured Section Header */}
+        <div className="text-center mb-8">
+          <div className="inline-block bg-luxury text-luxury-foreground px-6 py-2 rounded-full text-sm font-medium mb-4">
+            <EditableText
+              initialText="Featured Selection"
+              className="text-luxury-foreground"
+              placeholder="Header bar text..."
+            />
+          </div>
+        </div>
+
+        {/* Featured Card */}
+        <div className="mb-20">
+          <FeaturedCard
+            image={featuredItem.image}
+            initialTitle={featuredItem.title}
+            initialDescription={featuredItem.description}
+            price={featuredItem.price}
+            category={featuredItem.category}
+          />
+        </div>
+
         <div className="text-center mb-16">
           <EditableText
             initialText="Thoughtfully Selected Treasures"

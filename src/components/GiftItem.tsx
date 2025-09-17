@@ -27,6 +27,7 @@ const GiftItem = ({
   const [currentCategory, setCurrentCategory] = useState(category || '');
   const [imageLink, setImageLink] = useState('');
   const [headlineLink, setHeadlineLink] = useState('');
+  const [priceLink, setPriceLink] = useState('');
 
   return (
     <Card 
@@ -115,13 +116,28 @@ const GiftItem = ({
       </div>
 
       {currentPrice && (
-        <div className="p-6 pt-4">
-          <EditableText
-            initialText={currentPrice}
-            className="w-full bg-burgundy text-burgundy-foreground hover:bg-burgundy/90 font-medium py-3 px-4 rounded-md text-center cursor-pointer smooth-transition"
-            placeholder="Enter price..."
-            onTextChange={setCurrentPrice}
-          />
+        <div className="p-6 pt-4 relative group/price">
+          <a 
+            href={priceLink || '#'} 
+            target={priceLink ? '_blank' : '_self'}
+            rel={priceLink ? 'noopener noreferrer' : undefined}
+            className="block"
+          >
+            <EditableText
+              initialText={currentPrice}
+              className="w-full bg-burgundy text-burgundy-foreground hover:bg-burgundy/90 font-medium py-3 px-4 rounded-md text-center cursor-pointer smooth-transition block"
+              placeholder="Enter price..."
+              onTextChange={setCurrentPrice}
+            />
+          </a>
+          <div className="absolute -top-2 right-2 opacity-0 group-hover/price:opacity-100 smooth-transition z-10">
+            <EditableText
+              initialText={priceLink}
+              className="text-xs bg-black/70 text-white rounded px-2 py-1"
+              placeholder="Affiliate link..."
+              onTextChange={setPriceLink}
+            />
+          </div>
         </div>
       )}
     </Card>

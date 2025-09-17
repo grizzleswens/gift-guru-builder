@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from '@/components/Header';
 import HeroSection from '@/components/ui/hero-section';
 import GiftItem from '@/components/GiftItem';
 import EditableText from '@/components/EditableText';
@@ -65,6 +66,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       <HeroSection />
       
       <main className="max-w-7xl mx-auto px-6 py-16">

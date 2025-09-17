@@ -42,6 +42,7 @@ const EditableText = ({
   };
 
   const handleBlur = () => {
+    console.log(`Saving text for ${persistentKey}:`, text);
     setIsEditing(false);
     if (persistentKey) {
       updateText(persistentKey, text);
@@ -52,6 +53,7 @@ const EditableText = ({
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !multiline) {
       e.preventDefault();
+      console.log(`Saving text via Enter for ${persistentKey}:`, text);
       setIsEditing(false);
       if (persistentKey) {
         updateText(persistentKey, text);

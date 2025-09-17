@@ -79,17 +79,6 @@ const Index = () => {
       <HeroSection />
       
       <main className="max-w-7xl mx-auto px-6 py-16">
-        {/* Featured Section Header */}
-        <div className="text-center mb-8">
-          <div className="inline-block bg-luxury text-luxury-foreground px-6 py-2 rounded-full text-sm font-medium mb-4">
-            <EditableText
-              initialText="Featured Selection"
-              className="text-luxury-foreground"
-              placeholder="Header bar text..."
-            />
-          </div>
-        </div>
-
         {/* Featured Card */}
         <div className="mb-20">
           <FeaturedCard

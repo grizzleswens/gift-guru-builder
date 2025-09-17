@@ -20,16 +20,20 @@ const EditableText = ({
   multiline = false,
   onTextChange
 }: EditableTextProps) => {
-  const { getText, updateText, saveStatus } = usePersistentText();
-  const [text, setText] = useState(persistentKey ? getText(persistentKey, initialText) : initialText);
+  const { getText, updateText, saveStatus, isLoaded } = usePersistentText();
+  const [text, setText] = useState(initialText);
   const [isEditing, setIsEditing] = useState(false);
 
-  // Update text when persistent state changes
+  // Initialize text when persistent data is loaded
   useEffect(() => {
-    if (persistentKey) {
-      setText(getText(persistentKey, initialText));
+    if (isLoaded && persistentKey) {
+      const persistentText = getText(persistentKey, initialText);
+      console.log(`Loading text for ${persistentKey}:`, persistentText);
+      setText(persistentText);
+    } else if (!persistentKey) {
+      setText(initialText);
     }
-  }, [persistentKey, getText, initialText]);
+  }, [isLoaded, persistentKey, initialText, getText]);
 
   const handleClick = () => {
     if (!isEditing) {

@@ -26,6 +26,10 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           multiline
         />
         
+        <div className="text-sm text-muted-foreground/70 mt-4">
+          2 hours ago | {new Date().toLocaleDateString()} | Sponsored
+        </div>
+        
         <div className="pt-4">
           <div className="w-24 h-px gold-gradient mx-auto" />
         </div>

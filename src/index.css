@@ -123,7 +123,7 @@ All colors MUST be HSL.
   }
 
   .elegant-text {
-    @apply font-serif text-luxury leading-relaxed;
+    @apply font-serif font-semibold text-luxury leading-relaxed;
   }
 
   .luxury-gradient {

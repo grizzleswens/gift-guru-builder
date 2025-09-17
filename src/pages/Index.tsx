@@ -82,6 +82,7 @@ const Index = () => {
         {/* Featured Card */}
         <div className="mb-20">
           <FeaturedCard
+            id="featured-main"
             image={featuredItem.image}
             initialTitle={featuredItem.title}
             initialDescription={featuredItem.description}
@@ -93,11 +94,13 @@ const Index = () => {
         <div className="text-center mb-16">
           <EditableText
             initialText="Thoughtfully Selected Treasures"
+            persistentKey="section-title"
             className="elegant-text text-3xl md:text-4xl font-semibold mb-4"
             placeholder="Enter section title..."
           />
           <EditableText
             initialText="Each item in our collection has been chosen for its exceptional quality, unique character, and ability to bring joy to both giver and receiver."
+            persistentKey="section-description"
             className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             placeholder="Add section description..."
             multiline
@@ -108,6 +111,7 @@ const Index = () => {
           {giftItems.map((item) => (
             <GiftItem
               key={item.id}
+              id={`gift-${item.id}`}
               image={item.image}
               initialTitle={item.title}
               initialDescription={item.description}
@@ -120,11 +124,13 @@ const Index = () => {
         <div className="text-center mt-20 py-16 border-t border-border">
           <EditableText
             initialText="The Art of Thoughtful Giving"
+            persistentKey="footer-title"
             className="elegant-text text-2xl font-medium mb-6"
             placeholder="Enter footer title..."
           />
           <EditableText
             initialText="In a world of endless choices, we believe in the power of curation. Each piece in our collection represents a commitment to quality, beauty, and the meaningful moments that gifts can create."
+            persistentKey="footer-description"
             className="text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             placeholder="Add closing message..."
             multiline

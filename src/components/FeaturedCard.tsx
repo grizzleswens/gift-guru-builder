@@ -4,6 +4,7 @@ import EditableText from './EditableText';
 import { cn } from '@/lib/utils';
 
 interface FeaturedCardProps {
+  id?: string;
   image: string;
   initialTitle: string;
   initialDescription: string;
@@ -13,6 +14,7 @@ interface FeaturedCardProps {
 }
 
 const FeaturedCard = ({ 
+  id = 'featured',
   image, 
   initialTitle, 
   initialDescription, 
@@ -59,12 +61,14 @@ const FeaturedCard = ({
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/image:opacity-100 smooth-transition flex items-center justify-center flex-col gap-2">
               <EditableText
                 initialText={currentImage}
+                persistentKey={`${id}-image-url`}
                 className="text-white text-sm bg-black/70 rounded-md px-3 py-2 font-mono"
                 placeholder="Enter image URL..."
                 onTextChange={setCurrentImage}
               />
               <EditableText
                 initialText={imageLink}
+                persistentKey={`${id}-image-link`}
                 className="text-white text-sm bg-black/70 rounded-md px-3 py-2"
                 placeholder="Enter affiliate link..."
                 onTextChange={setImageLink}
@@ -75,6 +79,7 @@ const FeaturedCard = ({
             <div className="absolute top-4 left-4">
               <EditableText
                 initialText={currentCategory}
+                persistentKey={`${id}-category`}
                 className="bg-luxury/90 text-luxury-foreground border-0 px-4 py-2 rounded-full text-sm font-medium"
                 placeholder="Category..."
                 onTextChange={setCurrentCategory}
@@ -94,6 +99,7 @@ const FeaturedCard = ({
               >
                 <EditableText
                   initialText={initialTitle}
+                  persistentKey={`${id}-title`}
                   className="elegant-text text-3xl font-bold leading-tight"
                   placeholder="Enter featured gift title..."
                 />
@@ -101,6 +107,7 @@ const FeaturedCard = ({
               <div className="absolute -top-2 -right-2 opacity-0 group-hover/headline:opacity-100 smooth-transition">
                 <EditableText
                   initialText={headlineLink}
+                  persistentKey={`${id}-headline-link`}
                   className="text-xs bg-black/70 text-white rounded px-2 py-1"
                   placeholder="Affiliate link..."
                   onTextChange={setHeadlineLink}
@@ -110,6 +117,7 @@ const FeaturedCard = ({
             
             <EditableText
               initialText={initialDescription}
+              persistentKey={`${id}-description`}
               className="text-muted-foreground leading-relaxed text-lg"
               placeholder="Describe this featured gift in detail..."
               multiline
@@ -126,6 +134,7 @@ const FeaturedCard = ({
               >
                 <EditableText
                   initialText={currentPrice}
+                  persistentKey={`${id}-price`}
                   className="w-full bg-burgundy text-burgundy-foreground hover:bg-burgundy/90 font-medium py-4 px-6 rounded-md text-center cursor-pointer smooth-transition block text-lg"
                   placeholder="Enter price..."
                   onTextChange={setCurrentPrice}
@@ -134,6 +143,7 @@ const FeaturedCard = ({
               <div className="absolute -top-2 right-2 opacity-0 group-hover/price:opacity-100 smooth-transition z-10">
                 <EditableText
                   initialText={priceLink}
+                  persistentKey={`${id}-price-link`}
                   className="text-xs bg-black/70 text-white rounded px-2 py-1"
                   placeholder="Affiliate link..."
                   onTextChange={setPriceLink}

@@ -9,31 +9,31 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 35 20% 97%;
-    --foreground: 15 25% 15%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 15 25% 15%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 15 25% 15%;
+    --popover-foreground: 0 0% 0%;
 
     --primary: 345 65% 25%;
-    --primary-foreground: 35 20% 97%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 35 30% 92%;
-    --secondary-foreground: 15 25% 15%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 35 15% 90%;
-    --muted-foreground: 15 15% 45%;
+    --muted-foreground: 0 0% 0%;
 
     --accent: 25 85% 55%;
-    --accent-foreground: 15 25% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --luxury: 345 75% 25%;
-    --luxury-foreground: 35 20% 97%;
+    --luxury-foreground: 0 0% 100%;
 
     --gold: 45 95% 65%;
-    --gold-foreground: 15 25% 15%;
+    --gold-foreground: 0 0% 0%;
 
     --burgundy: 0 60% 35%;
     --burgundy-foreground: 0 0% 100%;
@@ -126,7 +126,7 @@ All colors MUST be HSL.
   }
 
   .elegant-text {
-    @apply font-serif font-semibold text-luxury leading-relaxed;
+    @apply font-serif font-semibold text-foreground leading-relaxed;
   }
 
   .luxury-gradient {

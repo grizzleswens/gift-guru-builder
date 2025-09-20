@@ -12,6 +12,7 @@ interface GiftItemProps {
   price?: string;
   category?: string;
   className?: string;
+  number?: number;
 }
 
 const GiftItem = ({ 
@@ -21,7 +22,8 @@ const GiftItem = ({
   initialDescription, 
   price, 
   category,
-  className 
+  className,
+  number 
 }: GiftItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [currentImage, setCurrentImage] = useState(image);
@@ -42,6 +44,13 @@ const GiftItem = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden">
+        {number && (
+          <div className="absolute top-4 right-4 z-20">
+            <div className="bg-burgundy text-burgundy-foreground w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              {number}
+            </div>
+          </div>
+        )}
         <div className="relative group/image">
           <a 
             href={imageLink || '#'} 

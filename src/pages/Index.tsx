@@ -108,7 +108,7 @@ const Index = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {giftItems.map((item) => (
+          {giftItems.map((item, index) => (
             <GiftItem
               key={item.id}
               id={`gift-${item.id}`}
@@ -117,6 +117,7 @@ const Index = () => {
               initialDescription={item.description}
               price={item.price}
               category={item.category}
+              number={index + 1}
             />
           ))}
         </div>

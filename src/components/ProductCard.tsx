@@ -11,7 +11,7 @@ const ProductCard = ({
     <div className="p-6">
       <div className="flex gap-6 mb-4">
         {/* Large Image on Left */}
-        <div className="flex-shrink-0 w-64 h-64">
+        <div className="flex-shrink-0 w-[500px] h-[500px]">
           <img 
             src={image} 
             alt={title}
@@ -20,16 +20,16 @@ const ProductCard = ({
         </div>
         
         {/* Content on Right */}
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 mt-[180px]">
           {/* Title */}
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h3>
           
           {/* Button */}
           <a 
             href={buttonLink}
-            className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors w-fit"
+            className="inline-flex items-center justify-center px-6 py-4 bg-burgundy text-burgundy-foreground hover:bg-burgundy/90 font-medium rounded-md transition-colors w-fit"
           >
             {buttonText}
           </a>
@@ -37,7 +37,7 @@ const ProductCard = ({
       </div>
       
       {/* Description underneath image */}
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-xl text-gray-600 leading-relaxed">
         {description}
       </p>
     </div>

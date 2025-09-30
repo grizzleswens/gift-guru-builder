@@ -4,6 +4,7 @@ import HeroSection from '@/components/ui/hero-section';
 import GiftItem from '@/components/GiftItem';
 import FeaturedCard from '@/components/FeaturedCard';
 import EditableText from '@/components/EditableText';
+import ProductCard from '@/components/ProductCard'; 
 
 // Import generated images
 import giftScarf from '@/assets/gift-scarf.jpg';
@@ -145,6 +146,41 @@ const Index = () => {
             multiline
           />
         </div>
+        {/* Tech Products Section */}
+        <div className="mt-20 pt-16 border-t border-border">
+          <div className="text-center mb-12">
+            <h2 className="elegant-text text-3xl md:text-4xl font-semibold mb-4">
+              Featured Tech & Gadgets
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Discover our selection of innovative technology and modern essentials
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <ProductCard
+              image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop"
+              title="Premium Wireless Headphones"
+              buttonText="Shop Now"
+              buttonLink="#"
+              description="Experience crystal-clear sound with these premium wireless headphones. Featuring active noise cancellation, 30-hour battery life, and premium comfort for all-day wear. Perfect for music lovers and professionals alike."
+            />
+            <ProductCard
+              image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop"
+              title="Smart Fitness Watch"
+              buttonText="Learn More"
+              buttonLink="#"
+              description="Track your fitness goals with style. This smartwatch monitors heart rate, sleep patterns, and daily activity. Water-resistant design with a vibrant display and week-long battery life keeps you connected and motivated."
+            />
+            <ProductCard
+              image="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400&h=400&fit=crop"
+              title="Ultra-Portable Camera"
+              buttonText="View Details"
+              buttonLink="#"
+              description="Capture life's moments in stunning detail. This compact camera delivers professional-quality photos and 4K video in a pocket-sized package. Perfect for travel, vlogging, or everyday photography adventures."
+            />
+          </div>
+</div>
       </main>
     </div>
   );

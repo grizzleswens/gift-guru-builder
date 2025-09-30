@@ -70,6 +70,14 @@ const Index = () => {
       description: "Unparalleled softness meets sophisticated style in this luxurious cashmere throw. Perfect for cozy evenings or as an elegant accent piece.",
       price: "$485",
       category: "Home"
+    },
+    {
+      id: 7,
+      image: giftCashmere,
+      title: "Pure Cashmere Throw",
+      description: "Unparalleled softness meets sophisticated style in this luxurious cashmere throw. Perfect for cozy evenings or as an elegant accent piece.",
+      price: "$485",
+      category: "Home"
     }
   ];
 
